@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Lab Record Manager</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="container">
+      <section class="card">
+        <header class="header">
+          <h1>Student Lab Record Manager</h1>
+          <p>Add your experiment records and keep them saved in your browser.</p>
+          <div class="top-bar">
+            <p class="count-text">Total Experiments: <strong id="totalCount">0</strong></p>
+            <button id="clearAllBtn" type="button" class="clear-btn">Clear All</button>
+          </div>
+        </header>
+
+        <form id="recordForm" class="form-grid">
+          <div class="field field-wide">
+            <label for="subjectName">Subject</label>
+            <input id="subjectName" type="text" required placeholder="e.g., Physics Lab" />
+          </div>
+
+          <div class="field field-wide">
+            <label for="experimentName">Experiment Name</label>
+            <input id="experimentName" type="text" required placeholder="e.g., Ohm's Law Verification" />
+          </div>
+
+          <div class="field">
+            <label for="experimentDate">Date</label>
+            <input id="experimentDate" type="date" required />
+          </div>
+
+          <div class="field">
+            <label for="marksStatus">Marks / Status</label>
+            <input id="marksStatus" type="text" required placeholder="e.g., 18/20 or Done" />
+          </div>
+
+          <div class="actions">
+            <button type="submit">Add Record</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="card table-card">
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Subject</th>
+                <th>Exp Name</th>
+                <th>Date</th>
+                <th>Marks / Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="recordsTableBody"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
